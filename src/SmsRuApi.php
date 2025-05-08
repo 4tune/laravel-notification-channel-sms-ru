@@ -8,7 +8,7 @@ class SmsRuApi extends \Zelenin\SmsRu\Api
 {
     public function sendMessage($recipient, SmsRuMessage $message)
     {
-        $sms = new \Zelenin\SmsRu\Entity\Sms($recipient, $message->content);
+        $sms = new \Zelenin\SmsRu\Entity\Sms($recipient, $message->content, $message->ip);
 
         if ($message->time) {
             $sms->time = $message->time;

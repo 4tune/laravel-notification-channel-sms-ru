@@ -20,6 +20,13 @@ class SmsRuMessage
     public $content = '';
 
     /**
+     * The sender ip.
+     *
+     * @var string
+     */
+    public $ip = '';
+
+    /**
      * Time of sending a message.
      *
      * @var int
@@ -125,6 +132,20 @@ class SmsRuMessage
     public function from($from)
     {
         $this->from = $from;
+
+        return $this;
+    }
+
+    /**
+     * Set the client ip.
+     *
+     * @param  string  $ip
+     *
+     * @return $this
+     */
+    public function ip($ip)
+    {
+        $this->ip = $ip;
 
         return $this;
     }
